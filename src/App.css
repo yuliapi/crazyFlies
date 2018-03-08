@@ -1,0 +1,108 @@
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+h2, p {
+    margin: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav ul {
+    display: inline-flex;
+    list-style: none;
+    justify-content: center;
+}
+
+/****************************Fly buttons custom content*******************************/
+.slow:before {
+    content: url('./images/fly-green-sm.png');
+}
+
+.normal:before {
+    content: url('./images/fly-blue-sm.png');
+}
+
+.fast:before {
+    content: url('./images/fly-red-sm.png');
+}
+
+.slow:after {
+    content: '+50';
+}
+
+.normal:after {
+    content: '+75';
+}
+
+.fast:after {
+    content: '+100';
+}
+
+/********************************Start button animation******************************/
+@keyframes pulse {
+    0% {
+
+        box-shadow: 0 0 0 0;
+    }
+    100% {
+        box-shadow: 0 0 50px 15px;
+    }
+}
+.start {
+    animation: pulse infinite 1s alternate linear;
+    animation-play-state: paused;
+}
+.start.pulse-animation {
+    animation-play-state: running;
+}
+
+/**************************************LAYOUT***************************************/
+
+.general-container {
+    display: grid;
+    grid-template-areas: 'header' 'progress' 'main';
+    grid-template-rows: auto;
+}
+
+.header {
+    grid-area: header;
+    background-color: #222;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.timer {
+    grid-area: progress;
+}
+
+.content {
+    grid-area: main;
+
+}
+
+.jar-container {
+  margin-top: 20px;
+    text-align: center;
+}
+
+/*.score-container {*/
+    /*grid-area: right;*/
+    /*border: 1px solid black;*/
+    /*height: 400px;*/
+/*}*/
+
+
+
+
+
