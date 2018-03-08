@@ -1,53 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9594b2fc-7fd0-47b0-94cf-992c63ff892e" name="Default" comment="Initial commit.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/crazy-flies.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+    <list default="true" id="9594b2fc-7fd0-47b0-94cf-992c63ff892e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" afterPath="$PROJECT_DIR$/public/manifest.json" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" afterPath="$PROJECT_DIR$/src/App.test.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Game-area.js" afterPath="$PROJECT_DIR$/src/components/Game-area.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Jar-controls.js" afterPath="$PROJECT_DIR$/src/components/Jar-controls.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Jar.js" afterPath="$PROJECT_DIR$/src/components/Jar.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/ScoreTable.js" afterPath="$PROJECT_DIR$/src/components/ScoreTable.js" />
-      <change beforePath="$PROJECT_DIR$/src/constants/action-types.js" afterPath="$PROJECT_DIR$/src/constants/action-types.js" />
-      <change beforePath="$PROJECT_DIR$/src/constants/fly-constants.js" afterPath="$PROJECT_DIR$/src/constants/fly-constants.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Button.js" afterPath="$PROJECT_DIR$/src/elements/Button.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Clock.js" afterPath="$PROJECT_DIR$/src/elements/Clock.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/ClockField.js" afterPath="$PROJECT_DIR$/src/elements/ClockField.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Fly.js" afterPath="$PROJECT_DIR$/src/elements/Fly.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/FlyButton.js" afterPath="$PROJECT_DIR$/src/elements/FlyButton.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/FlyCount.js" afterPath="$PROJECT_DIR$/src/elements/FlyCount.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/PointsPopup.js" afterPath="$PROJECT_DIR$/src/elements/PointsPopup.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Score.js" afterPath="$PROJECT_DIR$/src/elements/Score.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/TempClockField.js" afterPath="$PROJECT_DIR$/src/elements/TempClockField.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Timer.js" afterPath="$PROJECT_DIR$/src/elements/Timer.js" />
-      <change beforePath="$PROJECT_DIR$/src/elements/TimerInner.js" afterPath="$PROJECT_DIR$/src/elements/TimerInner.js" />
-      <change beforePath="$PROJECT_DIR$/src/images/fly-blue-sm.png" afterPath="$PROJECT_DIR$/src/images/fly-blue-sm.png" />
-      <change beforePath="$PROJECT_DIR$/src/images/fly-blue.png" afterPath="$PROJECT_DIR$/src/images/fly-blue.png" />
-      <change beforePath="$PROJECT_DIR$/src/images/fly-green-sm.png" afterPath="$PROJECT_DIR$/src/images/fly-green-sm.png" />
-      <change beforePath="$PROJECT_DIR$/src/images/fly-green.png" afterPath="$PROJECT_DIR$/src/images/fly-green.png" />
-      <change beforePath="$PROJECT_DIR$/src/images/fly-red-sm.png" afterPath="$PROJECT_DIR$/src/images/fly-red-sm.png" />
-      <change beforePath="$PROJECT_DIR$/src/images/fly.png" afterPath="$PROJECT_DIR$/src/images/fly.png" />
-      <change beforePath="$PROJECT_DIR$/src/images/splat.png" afterPath="$PROJECT_DIR$/src/images/splat.png" />
-      <change beforePath="$PROJECT_DIR$/src/images/target30.png" afterPath="$PROJECT_DIR$/src/images/target30.png" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" afterPath="$PROJECT_DIR$/src/index.css" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/registerServiceWorker.js" afterPath="$PROJECT_DIR$/src/registerServiceWorker.js" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" afterPath="$PROJECT_DIR$/src/store/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -390,11 +345,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520480009011</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initial commit.">
+      <created>1520480497268</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520480497268</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189382000" />
+    <option name="totallyTimeSpent" value="189445000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -665,6 +627,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -672,6 +635,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -685,6 +649,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -692,6 +657,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -699,6 +665,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -706,6 +673,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -713,6 +681,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="36" lean-forward="false" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -720,6 +691,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="1" column="39" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -727,6 +699,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1520384809141" expanded="true" signature="165:251" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -734,6 +710,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1520359925055" expanded="true" signature="579:710" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -741,6 +720,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3050">
           <caret line="122" column="23" lean-forward="true" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -748,6 +730,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-300">
           <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -755,6 +738,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
           <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -762,6 +748,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -769,6 +758,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -776,6 +768,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1520459185116" expanded="true" signature="765:766" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="926:1737" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="964:1718" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="989:1695" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1018:1214" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1121:1209" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1184:1209" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1243:1445" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1350:1440" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1415:1440" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1474:1669" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1576:1664" ph="..." />
+            <marker date="1520459185116" expanded="true" signature="1639:1664" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -783,6 +791,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -790,6 +799,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
           <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -797,6 +809,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="100" column="16" lean-forward="true" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1520398365320" expanded="true" signature="2553:2843" ph="..." />
+            <marker date="1520398365320" expanded="true" signature="2589:2804" ph="..." />
+            <marker date="1520398365320" expanded="true" signature="2650:2767" ph="..." />
+            <marker date="1520398365320" expanded="true" signature="3000:3424" ph="..." />
+            <marker date="1520398365320" expanded="true" signature="3032:3397" ph="..." />
+            <marker date="1520398365320" expanded="true" signature="3089:3364" ph="..." />
+            <marker date="1520398365320" expanded="true" signature="3134:3141" ph="&amp;##8687;" />
+            <marker date="1520398365320" expanded="true" signature="3262:3348" ph="..." />
+            <marker date="1520398365320" expanded="true" signature="3307:3314" ph="&amp;##8687;" />
+          </folding>
         </state>
       </provider>
     </entry>
