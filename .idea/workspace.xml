@@ -2,51 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9594b2fc-7fd0-47b0-94cf-992c63ff892e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/crazy-flies.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/manifest.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/App.test.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/actions/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/Game-area.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/Header.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/Jar-controls.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/Jar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/ScoreTable.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/constants/action-types.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/constants/fly-constants.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/Button.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/Clock.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/ClockField.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/Fly.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/FlyButton.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/FlyCount.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/PointsPopup.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/Score.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/TempClockField.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/Timer.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/elements/TimerInner.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/fly-blue-sm.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/fly-blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/fly-green-sm.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/fly-green.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/fly-red-sm.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/fly.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/splat.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/images/target30.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/index.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/registerServiceWorker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/store/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Game-area.js" afterPath="$PROJECT_DIR$/src/components/Game-area.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Jar-controls.js" afterPath="$PROJECT_DIR$/src/components/Jar-controls.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Jar.js" afterPath="$PROJECT_DIR$/src/components/Jar.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/ScoreTable.js" afterPath="$PROJECT_DIR$/src/components/ScoreTable.js" />
+      <change beforePath="$PROJECT_DIR$/src/constants/action-types.js" afterPath="$PROJECT_DIR$/src/constants/action-types.js" />
+      <change beforePath="$PROJECT_DIR$/src/constants/fly-constants.js" afterPath="$PROJECT_DIR$/src/constants/fly-constants.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/Button.js" afterPath="$PROJECT_DIR$/src/elements/Button.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/Clock.js" afterPath="$PROJECT_DIR$/src/elements/Clock.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/ClockField.js" afterPath="$PROJECT_DIR$/src/elements/ClockField.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/Fly.js" afterPath="$PROJECT_DIR$/src/elements/Fly.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/FlyButton.js" afterPath="$PROJECT_DIR$/src/elements/FlyButton.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/FlyCount.js" afterPath="$PROJECT_DIR$/src/elements/FlyCount.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/PointsPopup.js" afterPath="$PROJECT_DIR$/src/elements/PointsPopup.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/Score.js" afterPath="$PROJECT_DIR$/src/elements/Score.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/TempClockField.js" afterPath="$PROJECT_DIR$/src/elements/TempClockField.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/Timer.js" afterPath="$PROJECT_DIR$/src/elements/Timer.js" />
+      <change beforePath="$PROJECT_DIR$/src/elements/TimerInner.js" afterPath="$PROJECT_DIR$/src/elements/TimerInner.js" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" afterPath="$PROJECT_DIR$/src/store/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -413,12 +391,20 @@
       <workItem from="1519959595729" duration="10980000" />
       <workItem from="1520011855829" duration="33922000" />
       <workItem from="1520110250869" duration="333000" />
-      <workItem from="1520110908018" duration="122153000" />
+      <workItem from="1520110908018" duration="122200000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit.">
+      <created>1520477944891</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1520477944891</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187787000" />
+    <option name="totallyTimeSpent" value="187834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,6 +481,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
