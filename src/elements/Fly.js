@@ -103,7 +103,6 @@ class Fly extends Component {
 
     stop = (e) => {
         e.stopPropagation();
-
         if (this.props.timer === true) {
             this.props.endAnimation();
             let coordX = Fly.cutString(this.flySpan.style.left);
