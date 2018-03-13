@@ -4,12 +4,17 @@ import {connect} from "react-redux";
 import uuidv1 from "uuid";
 import Fly from '../elements/Fly'
 import Popover from '../elements/PointsPopup'
-import {updateScore, addPointsPopover, illegalHuntOccur} from "../actions";
+import {updateScore, addPointsPopover, illegalHuntOccur, showModal, pauseTimer} from "../actions";
 
 import {FALSE_CLICK_SCORE, JAR_HEIGHT, JAR_WIDTH} from "../constants/fly-constants";
 
 const mapStateToProps = state => {
-    return {flies: state.flies, popovers: state.popovers, warning: state.warning, isGameStarted: state.timerActive};
+    return {
+        flies: state.flies,
+        popovers: state.popovers,
+        warning: state.warning,
+        isGameStarted: state.gameStarted,
+    };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -18,7 +23,11 @@ const mapDispatchToProps = dispatch => {
             dispatch(addPointsPopover(popover))
         },
         updateScore: score => dispatch(updateScore(score)),
-        illegalHuntOccur: () => dispatch(illegalHuntOccur())
+        illegalHuntOccur: () => dispatch(illegalHuntOccur()),
+        showModal: (modal) => dispatch(showModal(modal)),
+        pauseTimer: () => dispatch(pauseTimer()),
+
+
     };
 };
 
@@ -44,12 +53,11 @@ border-color: white;
 class Jar extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.isGameStarted === true && nextProps.flies.length === 0) {
-            console.log('game over');
+            this.props.pauseTimer();
 
+            this.props.showModal({modalType: 'aheadOfTime'});
         }
     }
-
-
     jarOnClick = (e) => {
         if (this.props.isGameStarted === true) {
             let coordX = e.nativeEvent.offsetX;

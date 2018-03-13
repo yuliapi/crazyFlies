@@ -6,6 +6,7 @@ const StyledDiv = styled.div`
  display: inline-block;
  width: 25px;
  height: 40px;
+ 
  margin-right: 3px;
  &:last-child {
    margin-right: 0;

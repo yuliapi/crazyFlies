@@ -17,8 +17,6 @@ const unfold = keyframes`
        transform: rotateX(0deg);;
     }
 `;
-
-
 const StyledDiv = styled.div`
  display: block;
  position: relative;
@@ -43,11 +41,11 @@ const StyledStaticCard = styled.div`
 	width: 100%;
 	height: 50%;
 	overflow: hidden;
-	border: 1px solid rgb(255, 0, 0);
+	border: 1px solid whitesmoke
 	
 	&.lower {
 	  align-items: flex-start;
-	  border-top: 0.5px solid inherit;
+	  border-top: 0.5px solid whitesmoke;
 	  border-bottom-left-radius: 3px;
 	  border-bottom-right-radius: 3px;
 	   & > span {
@@ -56,7 +54,7 @@ const StyledStaticCard = styled.div`
 	};
 	&.upper {
 	  align-items: flex-end;
-	  border-bottom: 0.5px solid inherit;
+	  border-bottom: 0.5px solid whitesmoke;
 	  border-top-left-radius: 3px;
 	  border-top-right-radius: 3px;
 	  & > span {
@@ -84,7 +82,7 @@ const StyledAnimatedCard = styled.div`
 		border: 1px solid inherit;
 		border-top: 0.5px solid inherit;
 		
-		animation: ${fold}, $easeInOut, 0.6s;
+		animation: ${fold}, 0.6s ease-in-out;
 		transform-style: preserve-3d
 		& > span {
 			transform: translateY(-50%
@@ -101,7 +99,7 @@ const StyledAnimatedCard = styled.div`
 		border: 0.5px solid inherit;
 		border-bottom: 0.5px solid inherit;
 		
-		animation: ${unfold}, $easeInOut, 0.6s;
+		animation: ${unfold} 0.6s ease-in-out
 		transform-style: preserve-3d
 		
 		& > span {
@@ -110,32 +108,42 @@ const StyledAnimatedCard = styled.div`
   }	
 `;
 const StyledSpan = styled.span`
- font-size: 36px;
- font-weight: 600;
- margin: 0 auto;
+
 `;
 
 class ClockField extends Component {
+
     render() {
-        let now = this.props.data
-        let before = this.props.data - 1;
+        let now = this.props.data;
+        let before = now === 0 ? 0 : this.props.data - 1 ;
+        let digit1 = now;
+        let digit2 = before;
+        let animation1 = 'unfold';
+        let animation2 = 'fold';
+        if (this.props.shuffle === true) {
+            digit1 = before;
+            digit2 = now;
+            animation1 = 'fold';
+            animation2 = 'unfold';
+        }
+
         return (
-            <StyledDiv>
-                <StyledStaticCard className = 'lower'>
-                    <StyledSpan>{now}</StyledSpan>
-                </StyledStaticCard>
-                <StyledStaticCard className = 'upper'>
-                    <StyledSpan>{before}</StyledSpan>
-                </StyledStaticCard>
-                {/*<StyledAnimatedCard className = 'first'>*/}
-                    {/*<StyledSpan>{before}</StyledSpan>*/}
-                {/*</StyledAnimatedCard>*/}
-                {/*<StyledAnimatedCard className = 'second'>*/}
-                    {/*<StyledSpan>{now}</StyledSpan>*/}
-                {/*</StyledAnimatedCard>*/}
-            </StyledDiv>
-
-
+            <div className='clockCardWrapper'>
+                <div className='clockCard' id='target'>
+                    <div className='upper'>
+                        <StyledSpan>{now}</StyledSpan>
+                    </div>
+                    <div className='lower'>
+                        <StyledSpan>{before}</StyledSpan>
+                    </div>
+                    <div className={`flip first ${animation1}`}>
+                        <StyledSpan>{digit1}</StyledSpan>
+                    </div>
+                    <div className={`flip second ${animation2}`}>
+                        <StyledSpan>{digit2}</StyledSpan>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

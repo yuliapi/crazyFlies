@@ -7,7 +7,7 @@ import ResetButton from '../elements/Button'
 
 
 const mapStateToProps = state => {
-    return {isGameStarted: state.timerActive};
+    return {isGameStarted: state.gameStarted};
 };
 
 const mapDispatchToProps = dispatch => {
@@ -21,13 +21,13 @@ class GameArea extends Component {
         this.props.resetGame()
     };
     render() {
-        let reset = null
+        let reset = null;
         if (this.props.isGameStarted === true) {
             reset = <ResetButton text='Reset game' handleClick={this.reset}/>;
         }
+
         return (
             <div>
-
                 <Jar/>
                 {reset}
             </div>

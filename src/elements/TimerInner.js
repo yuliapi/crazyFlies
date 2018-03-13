@@ -7,17 +7,23 @@ import Clock from '../elements/Clock'
 import {TIMER_LENGTH} from "../constants/fly-constants";
 
 
-import {startTimer, illegalHuntResolved, noFliesWarning, resetGame} from "../actions/index";
+import {startGame, startTimer, illegalHuntResolved, noFliesWarning, resetGame} from "../actions/index";
 
 const mapStateToProps = state => {
-    return {illegalHunt: state.illegalHunt, fliesTotal: state.flies.length};
+    return {
+        timerStatus: state.timerStatus,
+        isGameStarted: state.gameStarted,
+        illegalHunt: state.illegalHunt,
+        fliesTotal: state.flies.length,
+        time: state.completedTime,
+    };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        startGame: () => dispatch(startGame()),
         startTimer: () => dispatch(startTimer()),
-        illegalHuntResolved: () =>dispatch(illegalHuntResolved()),
+        illegalHuntResolved: () => dispatch(illegalHuntResolved()),
         noFliesWarning: () => dispatch(noFliesWarning()),
         resetGame: () => dispatch(resetGame())
     };
@@ -27,13 +33,14 @@ const timeProgress = keyframes`
 
   to {width: 100%;}
 `;
-const time = `${TIMER_LENGTH}s`
+const time = `${TIMER_LENGTH}s`;
 const StyledProgressInner = styled.div`
 
  height: inherit;
  background-color: rgb(0, 255, 255);
  animation: ${timeProgress} ${time} linear;
   mix-blend-mode: difference;
+   animation-play-state: running
 
 `;
 const StyledInner = styled.div`
@@ -81,37 +88,48 @@ const StyledArrow = styled.span`
     margin-right: ${props => props.left ? '40px' : 0};
      margin-left: ${props => props.right ? '30px' : 0};
     animation: ${props => props.left ? arrowAnimationLeft : arrowAnimationRight} infinite 1s alternate ease-in-out;
-`
+`;
+
 class Inner extends Component {
+
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.isGameStarted === true && nextProps.timerStatus === 'paused') {
+            this.timerProgress.style.animationPlayState = "paused";
+        }
+    }
+
     startHunting = () => {
         if (this.props.fliesTotal === 0) {
             this.props.noFliesWarning()
         } else {
-            this.props.startTimer();
-            this.props.illegalHuntResolved()
+            this.props.startGame();
+            if (this.props.illegalHunt === true) {
+                this.props.illegalHuntResolved()
+            }
         }
-
     };
 
-        render() {
-        if (this.props.status === true) {
+    render() {
+        if (this.props.timerStatus !== 'stopped') {
+
             return (
-                <StyledProgressInner>
+                <StyledProgressInner innerRef={node => this.timerProgress = node}>
                     <StyledWrapOne>
-                        <StyledWrapTwo className='flex-box' >
+                        <StyledWrapTwo className='flex-box'>
                             <Clock/>
-                            <Score />
+                            <Score/>
                         </StyledWrapTwo>
                     </StyledWrapOne>
                 </StyledProgressInner>
             )
         }
+
         let helper = this.props.illegalHunt === true ? 'pulse-animation start' : 'start';
         return (
             <StyledInner>
                 <StyledWrapOne>
                     <StyledWrapTwo className='flex-box'>
-
                         <StyledArrow left>&#8687;</StyledArrow>
                         <Button text='Start hunting' helperClass={helper} handleClick={this.startHunting}/>
                         <StyledArrow right>&#8687;</StyledArrow>
@@ -121,7 +139,6 @@ class Inner extends Component {
         )
     }
 }
-
 
 const InnerConnected = connect(mapStateToProps, mapDispatchToProps)(Inner);
 export default InnerConnected;

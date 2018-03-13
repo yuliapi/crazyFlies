@@ -58,10 +58,12 @@ button:focus {
         box-shadow: 0 0 50px 15px;
     }
 }
+
 .start {
     animation: pulse infinite 1s alternate linear;
     animation-play-state: paused;
 }
+
 .start.pulse-animation {
     animation-play-state: running;
 }
@@ -92,17 +94,147 @@ button:focus {
 }
 
 .jar-container {
-  margin-top: 20px;
+    margin-top: 20px;
     text-align: center;
 }
 
 /*.score-container {*/
-    /*grid-area: right;*/
-    /*border: 1px solid black;*/
-    /*height: 400px;*/
+/*grid-area: right;*/
+/*border: 1px solid black;*/
+/*height: 400px;*/
 /*}*/
+.clockCardWrapper {
+    /*border: 1px solid rgb(255, 0, 0);*/
+    margin: 3px;
+}
 
+.clockCard {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 40px;
+    perspective-origin: 50% 50%;
+    perspective: 80px;
+    background-color: whitesmoke;
 
+    box-shadow: 0px 10px 10px -10px grey;
+}
+
+.upper, .lower {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    border: 1px solid whitesmoke;
+}
+
+.upper span,
+.lower span {
+    font-size: 36px;
+
+}
+
+.upper {
+    align-items: flex-end;
+
+    border-bottom: 0.5px solid whitesmoke;
+    border-top-right-radius: 3px;
+}
+
+.upper span {
+    transform: translateY(50%);
+}
+
+.lower {
+    align-items: flex-start;
+    border-top: 0.5px solid whitesmoke;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.lower span {
+    transform: translateY(-50%)
+}
+
+.flip {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 20px;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.flip span {
+    font-size: 36px;
+    /*color: black;*/
+}
+
+.flip.unfold {
+    top: 50%;
+    align-items: flex-start;
+    transform-origin: 50% 0%;
+    transform: rotateX(180deg);
+    background-color: whitesmoke;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid gray;
+    border-top: 0.5px solid whitesmoke;
+}
+
+.flip.unfold span {
+    transform: translateY(-50%)
+}
+
+.flip.fold {
+    top: 0%;
+    align-items: flex-end;
+    transform-origin: 50% 100%;
+    transform: rotateX(0deg);
+    background-color: whitesmoke;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: 0.5px solid gray;
+    border-bottom: 0.5px solid whitesmoke;
+}
+
+.flip.fold span {
+    transform: translateY(50%)
+}
+
+@keyframes Fold {
+    from {
+        transform: rotateX(0deg)
+    }
+    to {
+        transform: rotateX(-180deg)
+    }
+
+}
+
+@keyframes Unfold {
+    from {
+        transform: rotateX(180deg)
+    }
+    to {
+        transform: rotateX(0deg)
+    }
+
+}
+
+.fold {
+    animation: Fold, 0.6s ease-in-out;
+    transform-style: preserve-3d
+}
+
+.unfold {
+    animation: Unfold, 0.6s ease-in-out;
+    transform-style: preserve-3d
+}
 
 
 

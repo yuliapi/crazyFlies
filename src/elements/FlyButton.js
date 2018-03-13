@@ -3,7 +3,7 @@ import styled, {keyframes} from 'styled-components';
 import {connect} from "react-redux";
 
 const mapStateToProps = state => {
-    return {isGameStarted: state.timerActive};
+    return {isGameStarted: state.gameStarted};
 };
 
 const animationPulse = keyframes`

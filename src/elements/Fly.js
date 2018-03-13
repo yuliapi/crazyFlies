@@ -3,7 +3,7 @@ import styled, {keyframes} from 'styled-components';
 import {connect} from 'react-redux';
 import uuidv1 from "uuid";
 import ReactAnimationFrame from 'react-animation-frame';
-import {removeFly, updateScore, illegalHuntOccur, addPointsPopover} from "../actions";
+import {removeFly, updateScore, illegalHuntOccur, addPointsPopover, setTotalFlies} from "../actions";
 import {
     FLY_SPEED_FAST,
     FLY_SPEED_NORMAL,
@@ -12,7 +12,6 @@ import {
     NORMAL_SCORE,
     FAST_SCORE,
     JAR_HEIGHT,
-    JAR_WIDTH,
     FLY_HEIGHT,
     FLY_WIDTH
 } from "../constants/fly-constants";
@@ -25,16 +24,14 @@ import imageTarget from '../images/target30.png'
 
 
 const mapStateToProps = state => {
-    return {flies: state.flies, timer: state.timerActive};
+    return {flies: state.flies, timerStatus: state.timerStatus};
 };
 const mapDispatchToProps = dispatch => {
     return {
         removeFly: flyId => dispatch(removeFly(flyId)),
         updateScore: score => dispatch(updateScore(score)),
         illegalHuntOccur: () => dispatch(illegalHuntOccur()),
-        addPointsPopover: popover => {
-            dispatch(addPointsPopover(popover))
-        },
+        addPointsPopover: popover => dispatch(addPointsPopover(popover)),
 
 
     };
@@ -103,17 +100,22 @@ class Fly extends Component {
 
     stop = (e) => {
         e.stopPropagation();
-        if (this.props.timer === true) {
+        if (this.props.timerStatus === 'started') {
             this.props.endAnimation();
             let coordX = Fly.cutString(this.flySpan.style.left);
-            let coordY =  Fly.cutString(this.flySpan.style.bottom);
+            let coordY = Fly.cutString(this.flySpan.style.bottom);
             this.setState({
                 pathData: {n: 0, d: 0, speed: 0, direction: 0}, alive: false, initPosX: coordX, initPosY: coordY,
             });
 
             const id = uuidv1();
-            let coordYAdj = JAR_HEIGHT -  coordY - FLY_HEIGHT;
-            this.props.addPointsPopover({id, coordX: coordX, coordY: coordYAdj, score: `+${scoreCounter[this.state.flyType]}`});
+            let coordYAdj = JAR_HEIGHT - coordY - FLY_HEIGHT;
+            this.props.addPointsPopover({
+                id,
+                coordX: coordX,
+                coordY: coordYAdj,
+                score: `+${scoreCounter[this.state.flyType]}`
+            });
             this.props.updateScore(scoreCounter[this.state.flyType]);
 
         } else {

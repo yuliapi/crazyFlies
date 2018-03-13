@@ -7,13 +7,12 @@ import {addFly, noFliesWarningDeactivate} from '../actions/index'
 import {FLY_SPEED_FAST, FLY_SPEED_NORMAL, FLY_SPEED_SLOW} from "../constants/fly-constants";
 
 const mapStateToProps = state => {
-    return {state: state, warning: state.warning};
+    return {warning: state.warning};
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         addFly: fly => dispatch(addFly(fly)),
-
         noFliesWarningDeactivate: () => dispatch(noFliesWarningDeactivate())
     };
 };
