@@ -1,5 +1,6 @@
 export const ADD_FLY = 'ADD_FLY';
 export const REMOVE_FLY = 'REMOVE_FLY';
+export const SET_TOTAL_FLIES = 'SET_TOTAL_FLIES';
 export const UPDATE_SCORE = 'UPDATE_SCORE';
 export const START_GAME = 'START_GAME';
 export const START_TIMER = 'START_TIMER';

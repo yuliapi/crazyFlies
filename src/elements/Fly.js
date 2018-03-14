@@ -28,6 +28,7 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
     return {
+        setTotalFlies: () => dispatch(setTotalFlies()),
         removeFly: flyId => dispatch(removeFly(flyId)),
         updateScore: score => dispatch(updateScore(score)),
         illegalHuntOccur: () => dispatch(illegalHuntOccur()),
@@ -101,6 +102,7 @@ class Fly extends Component {
     stop = (e) => {
         e.stopPropagation();
         if (this.props.timerStatus === 'started') {
+            this.props.setTotalFlies();
             this.props.endAnimation();
             let coordX = Fly.cutString(this.flySpan.style.left);
             let coordY = Fly.cutString(this.flySpan.style.bottom);

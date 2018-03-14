@@ -1,6 +1,7 @@
 import {
     ADD_FLY,
     REMOVE_FLY,
+    SET_TOTAL_FLIES,
     UPDATE_SCORE,
     START_GAME,
     START_TIMER,
@@ -23,7 +24,7 @@ import {FLY_STATUS_ALIVE} from "../constants/fly-constants";
 
 const initialState = {
     flies: [],
-
+    totalFlies: 0,
     score: 0,
     gameStarted: false,
     timerStatus: 'stopped',
@@ -38,9 +39,13 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_FLY:
-            return {...state, flies: [...state.flies, {...action.payload, flyStatus: FLY_STATUS_ALIVE}]};
+
+            return {...state, flies: [...state.flies, {...action.payload, flyStatus: FLY_STATUS_ALIVE, }], totalFlies: state.totalFlies + 1};
         case REMOVE_FLY:
             return {...state, flies: state.flies.filter(fly => fly.id !== action.payload)};
+        case SET_TOTAL_FLIES:
+            console.log(state.totalFlies);
+            return{... state,  totalFlies: state.totalFlies - 1};
         case UPDATE_SCORE:
             return {...state, score: state.score + action.payload};
         case START_GAME:
@@ -69,6 +74,7 @@ export default (state = initialState, action) => {
         case HIDE_MODAL:
             return {...state, modal: {show: false} };
         case RESET_GAME:
+
             return initialState;
         default:
             return state;

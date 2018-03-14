@@ -1,19 +1,26 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {START_TIMER} from "../constants/action-types";
+
 
 
 const StyledButton = styled.button`
  height: 50px;
+ width: 175px;
   padding: 10px;
   color: inherit;
   background-color: inherit;
   border: 2px solid;
   border-radius: 3px;
+  cursor: pointer;
+  & > span {
+  font-size: 1.5em;
+  font-weight: bold;
+  }
+  &:hover > span {
+font-size: 1.3em;
+  }
 `;
-const btnType = {};
 
-btnType[START_TIMER] = 'btn-control';
 export default class Button extends Component {
 
     handleClick = () => {
@@ -21,8 +28,8 @@ export default class Button extends Component {
     };
 
     render() {
-        let helperClass = this.props.helperClass ? this.props.helperClass : '';
-        return <StyledButton className={helperClass} onClick={this.handleClick}><h2>{this.props.text}</h2></StyledButton>
+        let cl = this.props.helperClass ? this.props.helperClass : '';
+        return <StyledButton className={cl} onClick={this.handleClick}><span>{this.props.text}</span></StyledButton>
     }
 
 }

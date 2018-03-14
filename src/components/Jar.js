@@ -11,6 +11,7 @@ import {FALSE_CLICK_SCORE, JAR_HEIGHT, JAR_WIDTH} from "../constants/fly-constan
 const mapStateToProps = state => {
     return {
         flies: state.flies,
+        totalFlies: state.totalFlies,
         popovers: state.popovers,
         warning: state.warning,
         isGameStarted: state.gameStarted,
@@ -52,7 +53,7 @@ border-color: white;
 
 class Jar extends Component {
     componentWillReceiveProps(nextProps) {
-        if (nextProps.isGameStarted === true && nextProps.flies.length === 0) {
+        if (nextProps.isGameStarted === true && nextProps.totalFlies === 0) {
             this.props.pauseTimer();
 
             this.props.showModal({modalType: 'aheadOfTime'});
@@ -71,6 +72,7 @@ class Jar extends Component {
     };
 
     render() {
+
         if (this.props.warning === true) {
             return (
                 <MyJar className='jar flex-box' onClick={this.jarOnClick}>

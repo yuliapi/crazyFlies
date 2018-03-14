@@ -11,7 +11,7 @@ import TimerInner from './elements/TimerInner';
 
 
 const mapStateToProps = state => {
-    return {modal: state.modal};
+    return {modalStatus: state.modal.show, modalType: state.modal.modalType};
 };
 
 const StyledTimer = styled.div`
@@ -24,8 +24,9 @@ const StyledTimer = styled.div`
 class App extends Component {
     render() {
         let myModal;
-        if (this.props.modal.show === true) {
-            myModal = <Modal/>
+        if (this.props.modalStatus === true) {
+
+            myModal = <Modal type={this.props.modalType}/>
         }
         return (
             <div className="App general-container">

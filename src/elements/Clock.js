@@ -56,7 +56,7 @@ class Clock extends Component {
         clearInterval(this.progress)
     }
 
-    startCount = () => {console.log(`timer paused:  ${this.state.isPaused}`)
+    startCount = () => {
         if (this.state.isPaused === false) {
             let total = this.state.totalTime;
 
