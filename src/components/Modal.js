@@ -94,8 +94,7 @@ width: 30px;
 height: 30px;
 background-color: rgba(95,144,222,0.5);
 float: left;
-`
-
+`;
 
 class ModalPiece extends Component {
     static getRandomArbitrary(min, max) {
