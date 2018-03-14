@@ -72,10 +72,12 @@ box-sizing: border-box;
 `;
 
 const Body = styled.div`
-  padding-bottom: 16px;
+
+  width: 100%;
   position: absolute;
   top: 50%;
   left:0;
+  
 `;
 
 const StyledButton = styled.button`
@@ -138,10 +140,10 @@ class Modal extends Component {
         if (this.props.type === 'aheadOfTime') {
             head = <h2>Well done!!!</h2>;
             paragraph =
-                <p>You've killed them all ahead of time. Next time challenge yourself with more and faster flies </p>
+                <p>You've killed them all ahead of time. Next time challenge yourself with more and faster flies. </p>
         } else {
             head = <h2>Sorry, time is out.</h2>;
-            paragraph = <p>It was nice try!</p>;
+            paragraph = <p>It was a nice try!</p>;
         }
         let arr = Array.apply(null, Array(60)).map(i => uuidv1());
 
@@ -157,9 +159,9 @@ class Modal extends Component {
                             {head}
                         </Header>
 
-                                <Body ref={body => this.container = body}>
-                                {paragraph}
-                                </Body>
+                        <Body ref={body => this.container = body}>
+                        {paragraph}
+                        </Body>
 
                     </Dialog>}
 
