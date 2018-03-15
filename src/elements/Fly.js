@@ -164,6 +164,7 @@ class Fly extends Component {
         return {"x": x, "y": y};
     }
 
+
     onAnimationFrame(time) {
         let theta = this.state.pathData.speed * time;
         let p = Fly.path(theta, this.state, 100.0);

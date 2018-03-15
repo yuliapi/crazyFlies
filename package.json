@@ -2,6 +2,7 @@
   "name": "crazy-flies",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "gsap": "^1.20.4",
     "normalize.css": "^8.0.0",
