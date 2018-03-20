@@ -172,17 +172,6 @@ class Fly extends Component {
         return {"x": x, "y": y};
     }
 
-    static adjustAngle(theta, path) {
-        const k = path.n / path.d;
-        const a = -k * Math.sin(k * theta) * Math.sin(theta) + Math.cos(k * theta) * Math.cos(theta);
-        const b = -k * Math.sin(k * theta) * Math.cos(theta) - Math.cos(k * theta) * Math.sin(theta);
-        return (Math.atan(a / b));
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return false;
-    }
-
     onAnimationFrame(time) {
         let theta = this.state.pathData.speed * time;
         let p = Fly.path(theta, this.state, 100.0);
@@ -195,18 +184,11 @@ class Fly extends Component {
             const next = new Victor(p.x, p.y);
 
             const slope = next.subtract(prev).verticalAngle()*1.1;
-            // console.log(slope);
-
-            // let slope = (n/ext.verticalAngle());
             this.flySpan.style.transform = `rotate(${slope}rad)`;
             this.flySpan.style.left = `${p.x}px`;
             this.flySpan.style.bottom = `${p.y}px`;
-
-
         }
     }
-
-
     render() {
 
         if (this.state.killed === true) {

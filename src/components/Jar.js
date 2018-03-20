@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import uuidv1 from "uuid";
 import Fly from '../elements/Fly'
 import Popover from '../elements/PointsPopup'
-import {updateScore, addPointsPopover, illegalHuntOccur, showModal, pauseTimer} from "../actions";
+import {updateScore, addPointsPopover, illegalHuntOccur, showModal, pauseTimer, loadCompleted} from "../actions";
 
 import {FALSE_CLICK_SCORE, JAR_HEIGHT, JAR_WIDTH, FLY_WIDTH, FLY_HEIGHT} from "../constants/fly-constants";
 import jarImage from '../images/jar.png'
@@ -28,8 +28,6 @@ const mapDispatchToProps = dispatch => {
         illegalHuntOccur: () => dispatch(illegalHuntOccur()),
         showModal: (modal) => dispatch(showModal(modal)),
         pauseTimer: () => dispatch(pauseTimer()),
-
-
     };
 };
 const JarWrapper = styled.div`

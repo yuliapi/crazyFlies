@@ -21,7 +21,7 @@ import {
 
 export const addFly = fly => ({type: ADD_FLY, payload: fly});
 export const removeFly = flyId => ({type: REMOVE_FLY, payload: flyId});
-export const setTotalFlies = () =>({type: SET_TOTAL_FLIES});
+export const setTotalFlies = () => ({type: SET_TOTAL_FLIES});
 export const updateScore = score => ({type: UPDATE_SCORE, payload: score});
 export const startGame = () => ({type: START_GAME})
 export const startTimer = () => ({type: START_TIMER});

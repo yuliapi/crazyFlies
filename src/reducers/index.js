@@ -16,13 +16,15 @@ import {
 
     SHOW_MODAL,
     HIDE_MODAL,
-PAUSE_TIMER
+    PAUSE_TIMER,
+
 
 } from '../constants/action-types'
 
 import {FLY_STATUS_ALIVE} from "../constants/fly-constants";
 
 const initialState = {
+
     flies: [],
     totalFlies: 0,
     score: 0,
@@ -40,12 +42,16 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_FLY:
 
-            return {...state, flies: [...state.flies, {...action.payload, flyStatus: FLY_STATUS_ALIVE, }], totalFlies: state.totalFlies + 1};
+            return {
+                ...state,
+                flies: [...state.flies, {...action.payload, flyStatus: FLY_STATUS_ALIVE,}],
+                totalFlies: state.totalFlies + 1
+            };
         case REMOVE_FLY:
             return {...state, flies: state.flies.filter(fly => fly.id !== action.payload)};
         case SET_TOTAL_FLIES:
             console.log(state.totalFlies);
-            return{... state,  totalFlies: state.totalFlies - 1};
+            return {...state, totalFlies: state.totalFlies - 1};
         case UPDATE_SCORE:
             return {...state, score: state.score + action.payload};
         case START_GAME:
@@ -66,13 +72,14 @@ export default (state = initialState, action) => {
         case NO_FLIES_WARNING_DEACTIVATE:
             return {...state, warning: false};
         case ADD_POINTS_POPOVER:
-            return{...state, popovers: [...state.popovers, action.payload]};
+            return {...state, popovers: [...state.popovers, action.payload]};
         case REMOVE_POINTS_POPOVER:
             return {...state, popovers: state.popovers.filter(popover => popover.id !== action.payload)};
         case SHOW_MODAL:
-            return{...state, modal: {...action.payload, show: true}};
+            return {...state, modal: {...action.payload, show: true}};
         case HIDE_MODAL:
-            return {...state, modal: {show: false} };
+            return {...state, modal: {show: false}};
+
         case RESET_GAME:
 
             return initialState;
