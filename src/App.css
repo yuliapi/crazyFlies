@@ -22,6 +22,9 @@ button:focus {
     list-style: none;
     justify-content: center;
 }
+.App:not(:empty) + .loader {
+    display: none;
+}
 
 /****************************Fly buttons custom content*******************************/
 .slow:before {

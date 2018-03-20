@@ -13,14 +13,17 @@ import {
     FAST_SCORE,
     JAR_HEIGHT,
     FLY_HEIGHT,
-    FLY_WIDTH
+    FLY_WIDTH, JAR_WIDTH
 } from "../constants/fly-constants";
+import Victor from 'victor';
 
 import imageFlyRed from '../images/fly.png';
 import imageFlyGreen from '../images/fly-green.png';
 import imageFlyBlue from '../images/fly-blue.png';
 import imageSplat from '../images/splat.png';
 import imageTarget from '../images/target30.png'
+
+window.Victor = Victor;
 
 
 const mapStateToProps = state => {
@@ -46,11 +49,12 @@ const StyledFly = styled.span`
     position: absolute;
     left: ${props => props.position.left}px;
     bottom: ${props => props.position.bottom}px;
-    transform:${props => props.rotate};
+     transform:${props => props.rotate};
     width: ${FLY_WIDTH}px;
     height: ${FLY_HEIGHT}px;
     z-index: 200;
     cursor: url(${imageTarget}), auto;
+    transform-origin: bottom center;
 `;
 const fade = keyframes`
   from {
@@ -78,7 +82,7 @@ const StyledSplat = styled.span`
     position: absolute;
     left: ${props => props.position.left}px;
     bottom: ${props => props.position.bottom}px;
-    transform:${props => props.rotate};
+   
     width: 40px;
     height: 40px;
     animation: ${fade} 1.5s ease-in-out;
@@ -88,6 +92,8 @@ const StyledSplat = styled.span`
 class Fly extends Component {
     constructor(props) {
         super();
+        // let initX = 130;
+        // let initY = 70;
         let initX = Math.floor(Math.random() * Math.floor(260));
         let initY = Math.floor(Math.random() * Math.floor(150));
         this.state = {
@@ -142,20 +148,22 @@ class Fly extends Component {
 
         let speed = (Math.random() * highSpeed + lowSpeed);
         let direction = Math.random() < 0.5 ? -1 : 1;
+
         return {'n': n, 'd': d, 'speed': speed, 'direction': direction}
     }
 
     static isInBounds(x, y) {
         let left = 0;
-        let right = 260;
-        let bottom = 0;
-        let top = 300;
+        let right = JAR_WIDTH - 2*FLY_WIDTH ;
+        let bottom = FLY_HEIGHT/2;
+        let top = JAR_HEIGHT - FLY_HEIGHT;
         let inBounds = true;
         if (Math.round(x) < left || Math.round(x) > right || Math.round(y) > top || Math.round(y) < bottom) {
             inBounds = false
         }
         return inBounds
     }
+
 
     static path(theta, data, amplitude) {
         let k = data.pathData.n / data.pathData.d;
@@ -164,6 +172,16 @@ class Fly extends Component {
         return {"x": x, "y": y};
     }
 
+    static adjustAngle(theta, path) {
+        const k = path.n / path.d;
+        const a = -k * Math.sin(k * theta) * Math.sin(theta) + Math.cos(k * theta) * Math.cos(theta);
+        const b = -k * Math.sin(k * theta) * Math.cos(theta) - Math.cos(k * theta) * Math.sin(theta);
+        return (Math.atan(a / b));
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return false;
+    }
 
     onAnimationFrame(time) {
         let theta = this.state.pathData.speed * time;
@@ -171,10 +189,23 @@ class Fly extends Component {
         if (Fly.isInBounds(p.x, p.y) === false) {
             this.setState({pathData: Fly.generateRandomPathData(this.state.flyType)});
         } else {
+            let coordX = Fly.cutString(this.flySpan.style.left);
+            let coordY = Fly.cutString(this.flySpan.style.bottom);
+            const prev = new Victor(coordX, coordY);
+            const next = new Victor(p.x, p.y);
+
+            const slope = next.subtract(prev).verticalAngle()*1.1;
+            // console.log(slope);
+
+            // let slope = (n/ext.verticalAngle());
+            this.flySpan.style.transform = `rotate(${slope}rad)`;
             this.flySpan.style.left = `${p.x}px`;
             this.flySpan.style.bottom = `${p.y}px`;
+
+
         }
     }
+
 
     render() {
 
@@ -182,7 +213,7 @@ class Fly extends Component {
             return (null);
         }
         if (this.state.alive === true) {
-            let angle = this.state.pathData.direction === -1 ? 'rotate(45deg)' : 'rotate(-45deg)';
+            let angle = this.state.pathData.direction === -1 ? 'rotate(0deg)' : 'rotate(0deg)';
             return <StyledFly data-area="fly" rotate={angle} speed={this.state.flyType}
                               position={{left: this.state.initPosX, bottom: this.state.initPosY}} onClick={this.stop}
                               innerRef={node => this.flySpan = node}

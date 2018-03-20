@@ -6,7 +6,7 @@ import Fly from '../elements/Fly'
 import Popover from '../elements/PointsPopup'
 import {updateScore, addPointsPopover, illegalHuntOccur, showModal, pauseTimer} from "../actions";
 
-import {FALSE_CLICK_SCORE, JAR_HEIGHT, JAR_WIDTH} from "../constants/fly-constants";
+import {FALSE_CLICK_SCORE, JAR_HEIGHT, JAR_WIDTH, FLY_WIDTH, FLY_HEIGHT} from "../constants/fly-constants";
 import jarImage from '../images/jar.png'
 
 const mapStateToProps = state => {
@@ -34,7 +34,7 @@ const mapDispatchToProps = dispatch => {
 };
 const JarWrapper = styled.div`
   position: relative;
-width: calc(${JAR_WIDTH}px + 40px);
+width: calc(${JAR_WIDTH}px + ${FLY_WIDTH}px);
   height: calc(${JAR_HEIGHT}px + 20px);
   margin: 10px auto;
   background-image: url(${jarImage});
@@ -45,12 +45,13 @@ width: calc(${JAR_WIDTH}px + 40px);
 `;
 
 const MyJar = styled.div`
- width: ${JAR_WIDTH}px;
+ width: calc(${JAR_WIDTH}px - ${FLY_WIDTH}px);
   height: ${JAR_HEIGHT}px;
   
      border-bottom-left-radius: 75px;
     position: relative;
    top: -10px;
+   left: ${FLY_WIDTH/2}px;
   z-index: 0;
   
 `;
@@ -102,6 +103,9 @@ class Jar extends Component {
         }
         let flies = this.props.flies;
         let popovers = this.props.popovers;
+        {flies.map(fly => (
+          console.log(fly)
+        ))}
         return (
             <JarWrapper>
                 <MyJar className='jar' onClick={this.jarOnClick}>

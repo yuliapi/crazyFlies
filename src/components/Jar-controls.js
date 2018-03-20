@@ -22,7 +22,7 @@ class JarControls extends Component {
 
     addNewFly = (speed) => {
         const id = uuidv1();
-        this.props.addFly({id, speed});
+        this.props.addFly({id, speed, context: 'jar'});
         if (this.props.warning === true) {
             this.props.noFliesWarningDeactivate()
         }
