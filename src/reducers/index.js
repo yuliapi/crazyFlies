@@ -34,7 +34,7 @@ const initialState = {
     warning: false,
     popovers: [],
     gameOver: false,
-    modal: {show: false},
+    modal: {show: true},
     completedTime: 0
 };
 

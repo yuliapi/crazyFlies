@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import uuidv1 from "uuid";
-// import {CSSTransition, TransitionGroup} from 'react-transition-group'
-// import TweenLite from 'gsap/TweenLite';
+import {Transition, TransitionGroup} from 'react-transition-group'
+import TweenLite from 'gsap/TweenLite';
 import {connect} from "react-redux";
 import {hideModal, resetGame} from "../actions";
 
@@ -98,43 +98,58 @@ background-color: rgba(95,144,222,0.5);
 float: left;
 `;
 
+const duration = 3000;
+
 class ModalPiece extends Component {
     static getRandomArbitrary(min, max) {
         return Math.random() * (max - min) + min;
     }
 
     render() {
-        // const distX = ModalPiece.getRandomArbitrary(-500, 500),
+
+        // const distX = ModalPiece.getRandomArbitrary(-250, 250),
         //     distY = ModalPiece.getRandomArbitrary(-250, 250),
         //     rotY = ModalPiece.getRandomArbitrary(-720, 720),
         //     rotX = ModalPiece.getRandomArbitrary(-720, 720),
         //     z = ModalPiece.getRandomArbitrary(-500, 500);
-        return <StyledPiece/>
+        return (
+            <Transition
+                in={this.props.in}
+                addEndListener={(node, done) => {
+                    TweenLite.to(node, 1, {alpha: 0.2});
+                    done();
+                }}
+            >
+                {status => {
+                    console.log(status);
+                    return <StyledPiece/>
+                }}
 
+            </Transition>
+        )
     }
 
 }
 
 class Modal extends Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         shouldShow: true
-    //     };
-    //     setInterval(() => {
-    //         this.setState({ shouldShow: !this.state.shouldShow })
-    //     }, 5000)
-    // }
-    //
+    constructor() {
+        super();
+        console.log("Create modal");
+        const arr = Array.apply(null, Array(60)).map(i => uuidv1());
+        this.state = {
+            active: true,
+            pieces: arr
+        };
+    }
 
     handleClick = () => {
-
-        this.props.hideModal();
-        this.props.resetGame()
+        this.setState({active: false});
+        // this.props.hideModal();
+        // this.props.resetGame()
     };
 
-
     render() {
+        console.log("Re-render modal", this.state);
         let paragraph;
         let head;
         if (this.props.type === 'aheadOfTime') {
@@ -145,30 +160,33 @@ class Modal extends Component {
             head = <h2>Sorry, time is out.</h2>;
             paragraph = <p>It was a nice try!</p>;
         }
-        let arr = Array.apply(null, Array(60)).map(i => uuidv1());
-
+        // const arr = Array.apply(null, Array(60)).map(i => uuidv1());
+        const arr = this.state.pieces;
         return (
 
             <div className='modal'>
                 <Overlay/>
                 <Content>
                     <Dialog>
-                        {arr.map((e) => (<ModalPiece key={e}/>))}
+                        {arr.map((e) =>
+                            <ModalPiece in={this.state.active}/>)
+                        }
+
                         <Header>
                             <StyledButton onClick={this.handleClick}/>
                             {head}
                         </Header>
 
-                        <Body ref={body => this.container = body}>
+
+                        <Body>
+
                         {paragraph}
+
                         </Body>
-
-                    </Dialog>}
-
+                    </Dialog>
                 </Content>
             </div>
-
-        );
+        )
     }
 
 }

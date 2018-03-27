@@ -4,9 +4,9 @@ import {connect} from "react-redux";
 import uuidv1 from "uuid";
 import Fly from '../elements/Fly'
 import Popover from '../elements/PointsPopup'
-import {updateScore, addPointsPopover, illegalHuntOccur, showModal, pauseTimer, loadCompleted} from "../actions";
+import {updateScore, addPointsPopover, illegalHuntOccur, showModal, pauseTimer} from "../actions";
 
-import {FALSE_CLICK_SCORE, JAR_HEIGHT, JAR_WIDTH, FLY_WIDTH, FLY_HEIGHT} from "../constants/fly-constants";
+import {FALSE_CLICK_SCORE, JAR_HEIGHT, JAR_WIDTH, FLY_WIDTH} from "../constants/fly-constants";
 import jarImage from '../images/jar.png'
 
 const mapStateToProps = state => {
@@ -101,9 +101,6 @@ class Jar extends Component {
         }
         let flies = this.props.flies;
         let popovers = this.props.popovers;
-        {flies.map(fly => (
-          console.log(fly)
-        ))}
         return (
             <JarWrapper>
                 <MyJar className='jar' onClick={this.jarOnClick}>
