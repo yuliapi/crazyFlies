@@ -34,7 +34,7 @@ const initialState = {
     warning: false,
     popovers: [],
     gameOver: false,
-    modal: {show: true},
+    modal: {show: false},
     completedTime: 0
 };
 
@@ -76,12 +76,11 @@ export default (state = initialState, action) => {
         case REMOVE_POINTS_POPOVER:
             return {...state, popovers: state.popovers.filter(popover => popover.id !== action.payload)};
         case SHOW_MODAL:
-            return {...state, modal: {...action.payload, show: true}};
+            return {...state, modal: {...action.payload, ...state.modal, show: true}};
         case HIDE_MODAL:
-            return {...state, modal: {show: false}};
+            return {...state, modal: {...state.modal, show: false}};
 
         case RESET_GAME:
-
             return initialState;
         default:
             return state;

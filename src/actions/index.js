@@ -14,8 +14,7 @@ import {
     ADD_POINTS_POPOVER,
     REMOVE_POINTS_POPOVER,
     SHOW_MODAL,
-    HIDE_MODAL,
-
+    HIDE_MODAL
 
 } from "../constants/action-types";
 
@@ -23,7 +22,7 @@ export const addFly = fly => ({type: ADD_FLY, payload: fly});
 export const removeFly = flyId => ({type: REMOVE_FLY, payload: flyId});
 export const setTotalFlies = () => ({type: SET_TOTAL_FLIES});
 export const updateScore = score => ({type: UPDATE_SCORE, payload: score});
-export const startGame = () => ({type: START_GAME})
+export const startGame = () => ({type: START_GAME});
 export const startTimer = () => ({type: START_TIMER});
 export const pauseTimer = () => ({type: PAUSE_TIMER});
 
@@ -37,6 +36,7 @@ export const removePointsPopover = popoverId => ({type: REMOVE_POINTS_POPOVER, p
 
 export const showModal = (modal) => ({type: SHOW_MODAL, payload: modal});
 export const hideModal = (modalId) => ({type: HIDE_MODAL, payload: modalId});
+
 
 
 // function addFly(fly) {

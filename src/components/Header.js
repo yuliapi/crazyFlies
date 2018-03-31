@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <div>
                 <h2>Add flies</h2>
-                < JarControls/>
+                <JarControls/>
             </div>
         )
     }
