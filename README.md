@@ -1,4 +1,5 @@
-#Crazy flies and other bites 
+# Crazy flies and other bites 
+
 Collection of small tasks that will be integrated into the final project "Jar of memories"
 
 Completed: Crazy flies [demo](http://yuliapi.github.io/projects/crazy-flies/index.html)
