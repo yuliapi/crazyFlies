@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
 }
+
 ul {
     padding: 0;
     margin: 0;
@@ -20,11 +21,45 @@ button:focus {
     align-items: center;
 }
 
+ul.main-nav {
+    background-color: #111;
+    padding: 0;
+    border-bottom: 2px solid red;
+}
+
+ul.main-nav li {
+    display: inline;
+    list-style-type: none;
+
+}
+
+ul.main-nav li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+ul.main-nav li a:hover {
+    color: red;
+}
+
+ul.main-nav li a.active {
+   background-color: red;
+}
+
+ul.main-nav li a.active:hover {
+   color: #111;
+}
+
 .nav ul {
     display: inline-flex;
     list-style: none;
     justify-content: center;
 }
+
 .App:not(:empty) + .loader {
     display: none;
 }

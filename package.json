@@ -4,10 +4,15 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-brands-svg-icons": "^5.1.0-11",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "0.1.0-11",
     "gsap": "^1.20.4",
     "normalize.css": "^8.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.1",
     "react-transition-group": "^2.2.1",
     "styled-components": "^3.1.6"

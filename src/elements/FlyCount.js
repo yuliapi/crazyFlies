@@ -9,7 +9,7 @@ const mapStateToProps = state => {
 
 const StyledDiv = styled.div`
 width: 35px;
-height: 40px;
+height: 35px;
 margin: 0 auto;
 color: white;
 background-color: ${props => props.color === 'red' ? 'red' : props.color === 'blue' ? 'blue' : 'green'};
