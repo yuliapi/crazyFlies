@@ -20,38 +20,8 @@ button:focus {
     justify-content: center;
     align-items: center;
 }
-
-ul.main-nav {
-    background-color: #111;
-    padding: 0;
-    border-bottom: 2px solid red;
-}
-
-ul.main-nav li {
-    display: inline;
-    list-style-type: none;
-
-}
-
-ul.main-nav li a {
-    display: inline-block;
-    color: #fff;
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-decoration: none;
-}
-
-ul.main-nav li a:hover {
-    color: red;
-}
-
-ul.main-nav li a.active {
-   background-color: red;
-}
-
-ul.main-nav li a.active:hover {
-   color: #111;
+.link-disabled {
+    pointer-events: none;
 }
 
 .nav ul {
@@ -138,13 +108,7 @@ ul.main-nav li a.active:hover {
     text-align: center;
 }
 
-/*.score-container {*/
-/*grid-area: right;*/
-/*border: 1px solid black;*/
-/*height: 400px;*/
-/*}*/
 .clockCardWrapper {
-    /*border: 1px solid rgb(255, 0, 0);*/
     margin: 3px;
 }
 
@@ -156,7 +120,6 @@ ul.main-nav li a.active:hover {
     perspective-origin: 50% 50%;
     perspective: 80px;
     background-color: whitesmoke;
-
     box-shadow: 0px 10px 10px -10px grey;
 }
 
@@ -173,12 +136,10 @@ ul.main-nav li a.active:hover {
 .upper span,
 .lower span {
     font-size: 36px;
-
 }
 
 .upper {
     align-items: flex-end;
-
     border-bottom: 0.5px solid whitesmoke;
     border-top-right-radius: 3px;
 }
@@ -211,7 +172,6 @@ ul.main-nav li a.active:hover {
 
 .flip span {
     font-size: 36px;
-    /*color: black;*/
 }
 
 .flip.unfold {
